@@ -1,4 +1,5 @@
 const User = require('./user.model');
+const bcrypt = require('bcrypt');
 
 /**
  * Load user and append to req.
@@ -23,12 +24,14 @@ function get(req, res) {
 /**
  * Create new user
  * @property {string} req.body.username - The username of user.
+ * @property {string} req.body.password - The password of user.
  * @property {string} req.body.mobileNumber - The mobileNumber of user.
  * @returns {User}
  */
 function create(req, res, next) {
   const user = new User({
     username: req.body.username,
+    password: bcrypt.hashSync(req.body.password, 8),
     mobileNumber: req.body.mobileNumber
   });
 
@@ -40,6 +43,7 @@ function create(req, res, next) {
 /**
  * Update existing user
  * @property {string} req.body.username - The username of user.
+ * @property {string} req.body.password - The password of user.
  * @property {string} req.body.mobileNumber - The mobileNumber of user.
  * @returns {User}
  */
