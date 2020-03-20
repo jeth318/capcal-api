@@ -1,0 +1,129 @@
+Arguments: 
+  /Users/jeth/.nvm/versions/node/v13.3.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js lint
+
+PATH: 
+  /Users/jeth/.nvm/versions/node/v13.3.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/jeth/dev/captracker/api/node_modules/.bin:/usr/local/Cellar/git/2.16.3/libexec/git-core:/usr/local/opt/php@7.3/sbin:/usr/local/opt/php@7.3/bin:/Users/jeth/.nvm/versions/node/v13.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/usr/local/mongodb/bin:/Applications/apache-maven-3.5.4/bin:/usr/local/bin:/usr/local
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  13.3.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "capcal-api",
+    "version": "5.0.0",
+    "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
+    "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
+    "main": "index.js",
+    "private": false,
+    "engines": {
+      "node": ">=8.10.0",
+      "npm": ">=5.6.0",
+      "yarn": ">=1.5.1"
+    },
+    "scripts": {
+      "start": "node index.js",
+      "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
+      "lint": "esw *.js server config --color",
+      "lint:watch": "yarn lint -- --watch",
+      "precommit": "yarn lint && yarn test",
+      "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors server --recursive",
+      "test:watch": "yarn test -- --watch",
+      "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
+      "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
+      "report-coverage": "coveralls < ./coverage/lcov.info"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
+    },
+    "keywords": [
+      "express",
+      "node",
+      "node.js",
+      "mongodb",
+      "mongoose",
+      "es6",
+      "mocha",
+      "istanbul",
+      "REST",
+      "API",
+      "boilerplate"
+    ],
+    "dependencies": {
+      "bcrypt": "^4.0.1",
+      "bluebird": "3.5.1",
+      "body-parser": "1.18.2",
+      "compression": "1.7.2",
+      "cookie-parser": "1.4.3",
+      "cors": "2.8.4",
+      "debug": "^2.4.5",
+      "dotenv": "^4.0.0",
+      "express": "4.16.3",
+      "express-jwt": "5.3.1",
+      "express-validation": "1.0.2",
+      "express-winston": "2.5.0",
+      "helmet": "^3.21.3",
+      "hoek": "^5.0.3",
+      "http-status": "1.0.1",
+      "joi": "10.6.0",
+      "jsonwebtoken": "^8.5.1",
+      "method-override": "^2.3.10",
+      "mongoose": "^5.9.5",
+      "morgan": "^1.9.1",
+      "nyc": "^15.0.0",
+      "winston": "2.4.1"
+    },
+    "devDependencies": {
+      "chai": "4.1.2",
+      "commitizen": "^4.0.3",
+      "coveralls": "^3.0.0",
+      "cross-env": "5.1.4",
+      "cz-conventional-changelog": "1.2.0",
+      "eslint": "3.16.1",
+      "eslint-config-airbnb-base": "7.1.0",
+      "eslint-plugin-import": "1.16.0",
+      "eslint-watch": "^6.0.1",
+      "istanbul": "^0.4.5",
+      "minimist": "^1.2.5",
+      "mocha": "^7.1.1",
+      "supertest": "3.0.0",
+      "supertest-as-promised": "4.0.2",
+      "validate-commit-msg": "^2.14.0"
+    },
+    "peerDependencies": {
+      "eslint": "7.0.0"
+    },
+    "license": "MIT",
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c esw *.js server config --color
+  Directory: /Users/jeth/dev/captracker/api
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:219:5)
+      at maybeClose (internal/child_process.js:1027:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:285:5)

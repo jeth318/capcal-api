@@ -5,12 +5,6 @@ const config = require('../../config/config');
 const bcrypt = require('bcrypt');
 const User= require('../user/user.model');
 
-// sample user, used for authentication
-const user = {
-  username: 'react',
-  password: 'express'
-};
-
 /**
  * Returns jwt token if valid username and password is provided
  * @param req
